@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ProductList.Mvc.Models.ProductCategory>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="dropdown">
+    <button class="dropbtn">Product Category</button>
+    <div class="dropdown-content ">
+        @foreach (var item in Model)
+        {
+            <a href="#">@item.Name</a>
+        }
+    </div>
+</div>
