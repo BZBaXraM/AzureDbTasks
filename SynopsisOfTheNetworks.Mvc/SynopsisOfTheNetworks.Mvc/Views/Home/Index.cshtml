@@ -1,0 +1,23 @@
+﻿@model IEnumerable<InfoViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <a href="@Url.Action("Details", "Home", new { id = item.Id })">
+                        @if (!string.IsNullOrEmpty(item.ProtocolName))
+                        {
+                            <img src="@item.Photo" class="card-img-top" alt="@item.ProtocolName">
+                        }
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
